@@ -8,11 +8,11 @@
 
 | スキル | 役割 |
 | --- | --- |
-| [skills/finance-valuation/](skills/finance-valuation/SKILL.md) | 財務分析、詳細5年分析、PER・PBR、DCF・WACC、類似企業比較などのバリュエーション。標準成果物は出典を追える Excel |
-| [skills/financial-analysis-dashboard/](skills/financial-analysis-dashboard/SKILL.md) | 経営分析ダッシュボード（BS・PLボックス図入りの単一HTML）。最後に「強み・弱み・課題・今後の戦略の方向性」のまとめを収録 |
-| [skills/financial-statement-visuals/](skills/financial-statement-visuals/SKILL.md) | 財務図解（Box図・サンキー図・STRAC表）の単一HTML。共通データ契約と数値検証スクリプトを保持 |
+| [.claude/skills/finance-valuation/](.claude/skills/finance-valuation/SKILL.md) | 財務分析、詳細5年分析、PER・PBR、DCF・WACC、類似企業比較などのバリュエーション。標準成果物は出典を追える Excel |
+| [.claude/skills/financial-analysis-dashboard/](.claude/skills/financial-analysis-dashboard/SKILL.md) | 経営分析ダッシュボード（BS・PLボックス図入りの単一HTML）。最後に「強み・弱み・課題・今後の戦略の方向性」のまとめを収録 |
+| [.claude/skills/financial-statement-visuals/](.claude/skills/financial-statement-visuals/SKILL.md) | 財務図解（Box図・サンキー図・STRAC表）の単一HTML。共通データ契約と数値検証スクリプトを保持 |
 
-各スキルは `SKILL.md` を入口とし、詳細仕様は `references/` 配下に分割している。
+スキルは Claude Code が自動認識できるよう `.claude/skills/` 配下に置く（この場所から移動しない）。各スキルは `SKILL.md` を入口とし、詳細仕様は `references/` 配下に分割している。
 
 ## 構成上の注意
 
@@ -22,10 +22,10 @@
 
 ## 検証スクリプト
 
-`skills/financial-statement-visuals/scripts/` にオフラインの JSON 検証スクリプトがある（Python 3、外部依存なし）。
+`.claude/skills/financial-statement-visuals/scripts/` にオフラインの JSON 検証スクリプトがある（Python 3、外部依存なし）。
 
 ```sh
-cd skills/financial-statement-visuals/scripts
+cd .claude/skills/financial-statement-visuals/scripts
 python validate_data.py <data.json>
 python validate_bundle.py <bundle.json>
 python -m unittest test_validate_bundle.py
